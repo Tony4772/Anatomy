@@ -1,0 +1,6 @@
+{
+  "name": "AnatomiMed",
+  "description": "Plataforma interactiva de anatomía médica 3D y RA con cuestionarios gamificados, exámenes con certificados digitales y foro de discusión.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
