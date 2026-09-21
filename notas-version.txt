@@ -1,0 +1,17 @@
+AnatomiMed 1.0 — Primera versión pública
+
+Novedades
+• Explorador anatómico 2D interactivo con regiones corporales y puntos clave
+• Vista frontal/dorsal y visualización de órganos internos
+• Módulo 3D / realidad aumentada para estructuras seleccionadas
+• Perlas clínicas por región y sistema
+• Retos, cuestionarios y examen de certificación médica
+• Diplomas digitales con folio
+• Comunidad (foro) para dudas y discusión académica
+• Tutor IA de anatomía clínica
+• Perfil de progreso con XP, niveles y dominio por sistemas
+• Sincronización en la nube con Firebase (perfil, foro, historial y certificados)
+
+Créditos
+AnatomiMed es desarrollado y propiedad de EBYZOM E.I.R.L.
+© 2026 EBYZOM E.I.R.L. Todos los derechos reservados.

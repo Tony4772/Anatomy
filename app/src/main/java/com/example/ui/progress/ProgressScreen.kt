@@ -32,7 +32,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun ProgressScreen(
     repository: AnatomyRepository,
-    onNavigateToCertificates: () -> Unit = {}
+    onNavigateToCertificates: () -> Unit = {},
+    onBack: (() -> Unit)? = null
 ) {
     val scope = rememberCoroutineScope()
     val profile by repository.studentProfile.collectAsStateWithLifecycle(initialValue = null)
@@ -48,6 +49,13 @@ fun ProgressScreen(
     Scaffold(
         topBar = {
             TopAppBar(
+                navigationIcon = {
+                    if (onBack != null) {
+                        IconButton(onClick = onBack) {
+                            Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
+                        }
+                    }
+                },
                 title = {
                     Text(
                         text = "Progreso y Perfil Académico",
@@ -508,6 +516,47 @@ fun ProgressScreen(
                 }
                 Spacer(modifier = Modifier.height(20.dp))
             }
+
+            // Créditos / Copyright
+            Card(
+                colors = CardDefaults.cardColors(containerColor = DarkNavySurface),
+                shape = RoundedCornerShape(16.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x224DD8EC)),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "Acerca de AnatomiMed",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.White
+                    )
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Text(
+                        text = "Desarrollado por EBYZOM E.I.R.L.",
+                        fontSize = 13.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MedicalTealLight
+                    )
+                    Text(
+                        text = "© ${java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)} EBYZOM E.I.R.L. Todos los derechos reservados.",
+                        fontSize = 11.sp,
+                        color = Color(0xFF90A4AE),
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                    Text(
+                        text = "AnatomiMed y su contenido son propiedad de EBYZOM E.I.R.L.",
+                        fontSize = 11.sp,
+                        color = Color(0xFF78909C),
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
         }
     }
 

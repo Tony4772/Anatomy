@@ -287,7 +287,7 @@ fun DigitalCertificateView(
                     action = Intent.ACTION_SEND
                     putExtra(
                         Intent.EXTRA_TEXT,
-                        "Diplomado Oficial en Anatomía Humana AnatomiMed.\nTitular: ${certificate.studentName}\nFolio: ${certificate.folio}\nCalificación: ${certificate.scorePercentage}%\nVerificado por la Academia Médica de Anatomía Clínica."
+                        "Diplomado Oficial en Anatomía Humana AnatomiMed.\nTitular: ${certificate.studentName}\nFolio: ${certificate.folio}\nCalificación: ${certificate.scorePercentage}%\nEmitido por AnatomiMed — © EBYZOM E.I.R.L."
                     )
                     type = "text/plain"
                 }
@@ -301,5 +301,21 @@ fun DigitalCertificateView(
             Spacer(modifier = Modifier.width(8.dp))
             Text("Compartir Diploma con Colegas", fontWeight = FontWeight.Bold)
         }
+
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = "Desarrollado por EBYZOM E.I.R.L.",
+            fontSize = 12.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = MedicalTealLight,
+            textAlign = TextAlign.Center
+        )
+        Text(
+            text = "© ${java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)} EBYZOM E.I.R.L. Todos los derechos reservados.",
+            fontSize = 11.sp,
+            color = Color(0xFF78909C),
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = 4.dp, bottom = 8.dp)
+        )
     }
 }

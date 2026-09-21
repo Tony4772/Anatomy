@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "806680509182",
+    "project_id": "anatomy-ebyzom",
+    "storage_bucket": "anatomy-ebyzom.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806680509182:android:963a14062436cd86d7c3af",
+        "android_client_info": {
+          "package_name": "com.aistudio.anatomimed.vqkcz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDSJRBY5dyrUOpzzheSqNcl1Mum_XoW3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806680509182:android:64a7569bd5686115d7c3af",
+        "android_client_info": {
+          "package_name": "com.ebyzom.anatomy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDSJRBY5dyrUOpzzheSqNcl1Mum_XoW3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

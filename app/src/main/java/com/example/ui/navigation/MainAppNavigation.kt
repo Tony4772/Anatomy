@@ -141,6 +141,9 @@ fun MainAppNavigation() {
                     },
                     onNavigateToCertificates = {
                         navController.navigate(Screen.Certificates.route)
+                    },
+                    onNavigateToProgress = {
+                        navController.navigate(Screen.Progress.route)
                     }
                 )
             }
@@ -202,7 +205,8 @@ fun MainAppNavigation() {
                     repository = repository,
                     onNavigateToCertificates = {
                         navController.navigate(Screen.Certificates.route)
-                    }
+                    },
+                    onBack = { navController.popBackStack() }
                 )
             }
 

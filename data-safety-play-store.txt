@@ -1,0 +1,126 @@
+Guía Data safety — AnatomiMed (Play Console)
+Desarrollador: EBYZOM E.I.R.L.
+App: AnatomiMed (com.ebyzom.anatomy)
+
+==================================================
+1) ANTES DE LLENAR EL FORMULARIO
+==================================================
+Necesitas:
+• URL pública de la Política de Privacidad:
+  https://anatomy-ebyzom.web.app/privacy-policy.html
+• URL pública de eliminación de datos:
+  https://anatomy-ebyzom.web.app/eliminar-datos.html
+• Esta guía (respuestas sugeridas según el código actual)
+• Correo de contacto configurado: contacto@ebyzom.com
+  (mismo correo de Play Console / EBYZOM)
+
+NO necesitas:
+• Sistema de usuario/contraseña
+• OAuth / Google Sign-In (no está implementado)
+• Flujo in-app de “borrar cuenta” con email/password
+  (Sí necesitas la página web de solicitud de borrado de datos para Data safety)
+
+==================================================
+2) PREGUNTAS GENERALES
+==================================================
+¿La app recopila o comparte alguno de los tipos de datos de usuario requeridos?
+→ SÍ
+
+¿Todos los datos de usuario recopilados por esta app están encriptados en tránsito?
+→ SÍ (HTTPS / Firebase)
+
+¿Proporcionas una forma de que los usuarios soliciten que se borren sus datos?
+→ SÍ
+→ URL: https://anatomy-ebyzom.web.app/eliminar-datos.html
+  (Aunque no haya login con contraseña, sí hay datos de perfil/foro/certificados en la nube.)
+
+==================================================
+3) DATOS QUE SÍ DEBES DECLARAR
+==================================================
+
+A) Nombre
+• Recopilado: SÍ (nombre del perfil / diplomas / foro)
+• Compartido: NO (salvo lo que el usuario publique en el foro comunitario)
+• Procesado de forma efímera: NO
+• Obligatorio u opcional: Opcional (el usuario lo edita)
+• Finalidades: Funcionalidad de la app, Gestión de cuenta / progreso académico
+• ¿Se recopila antes de que el usuario acepte? Depende del flujo; por defecto hay un nombre inicial local.
+• ¿Se cifra en tránsito?: SÍ
+• ¿Eliminación a petición?: SÍ (vía contacto)
+
+B) Otros datos personales / información del usuario
+• Universidad / hospital (texto libre del perfil)
+• Recopilado: SÍ
+• Compartido: NO (salvo si aparece en posts del foro o diplomas que el usuario comparta)
+• Finalidades: Funcionalidad de la app
+• Cifrado en tránsito: SÍ
+
+C) ID de usuario / identificadores de la app
+• UID anónimo de Firebase Auth (cuando usa “Sesión Firebase”)
+• Recopilado: SÍ
+• Compartido: NO (queda en Firebase de EBYZOM)
+• Finalidades: Funcionalidad de la app (sincronización)
+• Cifrado en tránsito: SÍ
+• NO marcar “Contraseñas” ni “Identificadores de cuenta de pago”
+
+D) Actividad en la app / progreso del usuario
+• XP, nivel, historial de quizzes, dominio por sistemas, certificados/diplomas
+• Recopilado: SÍ
+• Compartido: NO
+• Finalidades: Funcionalidad de la app
+• Cifrado en tránsito: SÍ (cuando se sincroniza a Firestore)
+
+E) Contenido generado por el usuario (si aplica en el formulario)
+• Publicaciones/comentarios del foro comunitario
+• Recopilado: SÍ
+• Compartido: SÍ → con otros usuarios de la app (foro público de lectura)
+• Finalidades: Funcionalidad de la app / Comunidad
+• Cifrado en tránsito: SÍ
+
+==================================================
+4) DATOS QUE NO DEBES MARCAR (con el código actual)
+==================================================
+• Contraseñas
+• Dirección de correo electrónico
+• Número de teléfono
+• Dirección física
+• Ubicación aproximada o precisa
+• Datos de salud / historial médico de pacientes
+• Información financiera / compras (si no hay Billing)
+• Fotos / vídeos (la cámara se usa para RA en vivo; no se suben fotos a Firebase)
+• Contactos
+• SMS / historial de llamadas
+• Archivos de audio
+• Datos de rendimiento / Crashlytics (no está integrado ahora)
+• Datos de publicidad / ID publicitario (no hay ads ahora)
+• Historial de navegación web
+
+Cámara:
+• Permiso CAMERA = sí, para Realidad Aumentada en el dispositivo.
+• En Data safety: normalmente NO declares “Fotos y videos” si no se capturan, guardan ni suben imágenes.
+  La cámara se usa en tiempo real y no se almacena en la nube.
+
+==================================================
+5) TERCEROS / SDK
+==================================================
+• Google Firebase (Authentication anónima + Cloud Firestore)
+• Declarar que los datos pueden procesarse con Google/Firebase como proveedor de infraestructura
+• No hay Analytics/Ads/Crashlytics en el build actual
+
+==================================================
+6) TEXTO CORTO ÚTIL PARA PLAY CONSOLE
+==================================================
+“AnatomiMed recopila datos académicos opcionales (nombre, universidad), progreso de aprendizaje, diplomas y contenido del foro para prestar la función educativa. La autenticación es anónima (sin contraseña) mediante Firebase. Los datos se transmiten cifrados (HTTPS). No se recopilan contraseñas, ubicación, datos financieros ni historial clínico de pacientes. Solicitudes de eliminación: contactar a EBYZOM E.I.R.L.”
+
+==================================================
+7) CHECKLIST RÁPIDO
+==================================================
+[ ] Política de privacidad publicada con URL https
+[ ] Página de eliminación de datos publicada con URL https (eliminar-datos.html)
+[ ] Correo oficial EBYZOM configurado en eliminar-datos.html
+[ ] Data safety: SÍ recopila datos
+[ ] Marcar: nombre, universidad/otros personales, ID de usuario, actividad en la app, UGC del foro
+[ ] NO marcar: contraseñas, email, teléfono, ubicación, salud clínica, ads
+[ ] Cifrado en tránsito: SÍ
+[ ] Eliminación de datos: SÍ + pegar URL de eliminar-datos.html
+[ ] Revisar si compartes foro → “Compartido: SÍ” solo para contenido del foro

@@ -1,0 +1,29 @@
+AnatomiMed es una aplicación educativa de anatomía humana desarrollada por EBYZOM E.I.R.L., pensada para estudiantes de medicina, internos, residentes y profesionales de la salud que buscan estudiar de forma visual, práctica y clínica.
+
+Explora el cuerpo humano con un mapa anatómico 2D interactivo. Selecciona regiones como cabeza y cuello, tórax, abdomen o extremidades, toca puntos clave y accede a descripciones, perlas clínicas y órganos asociados. Alterna entre vista frontal y dorsal, y activa el modo de órganos para una revisión más clara de estructuras internas.
+
+Profundiza con el explorador 3D y realidad aumentada: visualiza estructuras con mayor detalle, despiece por capas y anclaje espacial para reforzar la orientación anatómica en escenarios cercanos a la práctica clínica.
+
+Consolida el aprendizaje con retos y evaluaciones. Practica con cuestionarios por sistemas, casos clínicos y un examen de certificación. Gana experiencia (XP), sube de nivel y lleva un seguimiento de tu dominio por sistemas anatómicos.
+
+Obtén diplomas digitales al completar certificaciones. Cada diploma incluye folio y datos del estudiante para compartir con colegas o respaldar tu progreso académico.
+
+Participa en la comunidad médica de AnatomiMed: publica dudas, discute perlas quirúrgicas y comparte conocimiento con otros estudiantes y profesionales. La sincronización en la nube (Firebase) permite respaldar perfiles, historial y certificados cuando inicias sesión.
+
+Consulta al Tutor IA para aclarar conceptos de anatomía clínica, irrigación, inervación y patologías frecuentes asociadas a cada región u órgano. Ideal para repasos rápidos antes de clases, pases de visita o exámenes.
+
+Características principales:
+• Mapa anatómico 2D interactivo con regiones y puntos clave
+• Exploración 3D / realidad aumentada
+• Perlas clínicas orientadas a la práctica médica
+• Retos, quizzes y examen de certificación
+• Diplomas digitales con folio verificable
+• Foro comunitario de aprendizaje
+• Tutor IA de anatomía clínica
+• Progreso, XP, niveles y dominio por sistemas
+• Sincronización en la nube de perfil y certificados
+
+AnatomiMed no sustituye la formación oficial ni el criterio clínico profesional: es una herramienta de apoyo al estudio y al repaso anatómico. El contenido está orientado a fines educativos.
+
+Desarrollado por EBYZOM E.I.R.L.
+© EBYZOM E.I.R.L. Todos los derechos reservados.

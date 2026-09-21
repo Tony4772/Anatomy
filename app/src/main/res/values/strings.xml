@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AnatomiMed</string>
+    <string name="copyright_notice">© %1$d EBYZOM E.I.R.L. Todos los derechos reservados.</string>
+    <string name="credits_company">Desarrollado por EBYZOM E.I.R.L.</string>
+    <string name="privacy_policy">Política de Privacidad</string>
+    <string name="about_title">Acerca de AnatomiMed</string>
 </resources>

@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.model.AnatomicalSystem
@@ -36,7 +37,8 @@ fun HomeScreen(
     onNavigateToOrgan: (String) -> Unit,
     onNavigateToQuiz: (AnatomicalSystem?) -> Unit,
     onNavigateToAITutor: (String) -> Unit,
-    onNavigateToCertificates: () -> Unit
+    onNavigateToCertificates: () -> Unit,
+    onNavigateToProgress: () -> Unit = {}
 ) {
     val regions = remember { BodyRegionRepository.regions }
     var selectedRegion by remember { mutableStateOf(regions[0]) } // Default to Head or Thorax
@@ -73,7 +75,7 @@ fun HomeScreen(
                                 color = Color.White
                             )
                             Text(
-                                text = "Explorador Anatómico 2D Interactivo",
+                                text = "EBYZOM E.I.R.L. · Explorador Anatómico 2D",
                                 fontSize = 11.sp,
                                 color = MedicalTealLight
                             )
@@ -110,6 +112,14 @@ fun HomeScreen(
                             imageVector = if (showXRayOrgans) Icons.Default.Visibility else Icons.Outlined.VisibilityOff,
                             contentDescription = "Rayos X Órganos",
                             tint = if (showXRayOrgans) MedicalTealLight else Color(0xFF78909C)
+                        )
+                    }
+
+                    IconButton(onClick = onNavigateToProgress) {
+                        Icon(
+                            imageVector = Icons.Outlined.Person,
+                            contentDescription = "Progreso y Firebase",
+                            tint = MedicalTealLight
                         )
                     }
 
@@ -499,7 +509,27 @@ fun HomeScreen(
                         }
                     }
 
-                    Spacer(modifier = Modifier.height(12.dp))
+                    Spacer(modifier = Modifier.height(14.dp))
+
+                    HorizontalDivider(color = Color(0x224DD8EC))
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Text(
+                        text = "© ${java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)} EBYZOM E.I.R.L.",
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MedicalTealLight,
+                        modifier = Modifier.fillMaxWidth(),
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        text = "AnatomiMed · Todos los derechos reservados",
+                        fontSize = 10.sp,
+                        color = Color(0xFF78909C),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(bottom = 4.dp),
+                        textAlign = TextAlign.Center
+                    )
                 }
             }
         }
@@ -531,6 +561,18 @@ fun HomeScreen(
                         fontSize = 13.sp,
                         lineHeight = 18.sp,
                         color = Color(0xFFCFD8DC)
+                    )
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Desarrollado por EBYZOM E.I.R.L.",
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MedicalTealLight
+                    )
+                    Text(
+                        text = "© ${java.util.Calendar.getInstance().get(java.util.Calendar.YEAR)} EBYZOM E.I.R.L. Todos los derechos reservados.",
+                        fontSize = 11.sp,
+                        color = Color(0xFF90A4AE)
                     )
                 }
             },
